@@ -37,10 +37,6 @@ async function run() {
       core.warning('PR body is up to date already - no updates made');
     }
 
-    if (!updateTitle && !updateBody) {
-      return;
-    }
-
     const client = new github.GitHub(inputs.token);
     const response = await client.pulls.update(request);
 
